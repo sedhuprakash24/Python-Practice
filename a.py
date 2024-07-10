@@ -754,13 +754,13 @@
 #          print("Zero division error occurs")    
 # safe_divide(24,2) 
 #-----------------6-----------------------
-def positive_divide(a,b):
-     try:
-         if a>=0 and b>=0:
-             print(a/b)
-     except ZeroDivisionError:
-         print("Zero division error occurs")
-     else:
-         print("Only positive numbers are allowed")     
-positive_divide(4,-2)
+# def positive_divide(a,b):
+#      try:
+#          if a>=0 and b>=0:
+#              print(a/b)
+#      except ZeroDivisionError:
+#          print("Zero division error occurs")
+#      else:
+#          print("Only positive numbers are allowed")     
+# positive_divide(4,-2)
         
