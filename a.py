@@ -763,4 +763,40 @@
 #      else:
 #          print("Only positive numbers are allowed")     
 # positive_divide(4,-2)
-        
+
+# from pymongo import MongoClient
+# URI = "mongodb://localhost:27017"
+# connection=MongoClient(URI)
+# Database=connection.ocean
+# collection=Database.students
+# # collection.insert_one({"Name":"Roshan","Age":"22","City":"Pondicherry"})
+# # collection.insert_many([
+# #     {"Name": "Vivaan", "Age": "21", "City": "Mumbai"},
+# #     {"Name": "Krishna", "Age": "25", "City": "Chennai"},
+# #     {"Name": "Reyansh", "Age": "20", "City": "Hyderabad"},
+# #     {"Name": "Reyansh", "Age": "20", "City": "Chennai"},
+# #     {"Name": "Krishna", "Age": "28", "City": "Kolkata"},
+# #     {"Name": "Arjun", "Age": "24", "City": "Chennai"},
+# #     {"Name": "Krishna", "Age": "27", "City": "Ahmedabad"},
+# #     {"Name": "Ishaan", "Age": "23", "City": "Kolkata"},
+# #     {"Name": "Vivaan", "Age": "28", "City": "Hyderabad"},
+# #     {"Name": "Sai", "Age": "18", "City": "Hyderabad"}
+# # ])
+# # collection.find_one_and_delete({"Name":"Arjun"})
+# a=collection.find_one({"Name":""})
+# print(a)
+
+from pymongo import MongoClient
+URI="mongodb://localhost:27017/"
+connection=MongoClient(URI)
+Database=connection.office
+collection=Database.workers
+# collection.insert_many([{"Name":"Sedhu","Age":"22","City":"Pondy"},
+#                        {"Name":"Aarav","Age":"25","City":"Mumbai"},
+#                        {"Name":"Anaya","Age":"23","City":"Delhi"},
+#                        {"Name":"Vihaan","Age":"30","City":"Bangalore"},
+#                        {"Name":"Aditi","Age":"28","City":"Chennai"},
+#                        {"Name":"Rohan","Age":"26","City":"Hyderabad"}])
+# print(collection.find_one({"$and":[{"Name":"Anaya"},{"City":"Delhi"}]}))
+# collection.update_one({"Name":"Sedhu"},{"$set":{"Name":"Mubee"}})
+collection.delete_one({"Name":"Mubee"})
