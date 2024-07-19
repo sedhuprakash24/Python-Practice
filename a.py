@@ -61,6 +61,7 @@
 ##print(bill)
 
 ##max = 90
+
 ##age = int(input("enter your age"))
 ##remaining_years = max-age
 ##remaining_months = (max-age)*12
@@ -786,17 +787,43 @@
 # a=collection.find_one({"Name":""})
 # print(a)
 
-from pymongo import MongoClient
-URI="mongodb://localhost:27017/"
-connection=MongoClient(URI)
-Database=connection.office
-collection=Database.workers
-# collection.insert_many([{"Name":"Sedhu","Age":"22","City":"Pondy"},
-#                        {"Name":"Aarav","Age":"25","City":"Mumbai"},
-#                        {"Name":"Anaya","Age":"23","City":"Delhi"},
-#                        {"Name":"Vihaan","Age":"30","City":"Bangalore"},
-#                        {"Name":"Aditi","Age":"28","City":"Chennai"},
-#                        {"Name":"Rohan","Age":"26","City":"Hyderabad"}])
-# print(collection.find_one({"$and":[{"Name":"Anaya"},{"City":"Delhi"}]}))
-# collection.update_one({"Name":"Sedhu"},{"$set":{"Name":"Mubee"}})
-collection.delete_one({"Name":"Mubee"})
+# from pymongo import MongoClient
+# URI="mongodb://localhost:27017/"
+# connection=MongoClient(URI)
+# Database=connection.office
+# collection=Database.workers
+# # collection.insert_many([{"Name":"Sedhu","Age":"22","City":"Pondy"},
+# #                        {"Name":"Aarav","Age":"25","City":"Mumbai"},
+# #                        {"Name":"Anaya","Age":"23","City":"Delhi"},
+# #                        {"Name":"Vihaan","Age":"30","City":"Bangalore"},
+# #                        {"Name":"Aditi","Age":"28","City":"Chennai"},
+# #                        {"Name":"Rohan","Age":"26","City":"Hyderabad"}])
+# # print(collection.find_one({"$and":[{"Name":"Anaya"},{"City":"Delhi"}]}))
+# # collection.update_one({"Name":"Sedhu"},{"$set":{"Name":"Mubee"}})
+# collection.delete_one({"Name":"Mubee"})
+
+# --------------------------DECORATORS----------------------------**********
+# def log_decorator(func):
+#     def dcm():
+#         print("Start")
+#         func()
+#         print("End")
+#     return dcm    
+# @log_decorator        
+# def greet():
+#     print("Hello World")
+
+# greet()
+
+# -----------------------2.--------------------------------
+n = int(input("Enter a number"))
+def repeat_decorator(func):
+    def qcm():
+        for i in range(1,n+1):
+            func()
+    return qcm
+@repeat_decorator
+def say_hi():
+    print("hi")
+        
+say_hi()
