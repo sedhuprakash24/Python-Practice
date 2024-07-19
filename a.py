@@ -816,14 +816,34 @@
 # greet()
 
 # -----------------------2.--------------------------------
-n = int(input("Enter a number"))
-def repeat_decorator(func):
-    def qcm():
-        for i in range(1,n+1):
-            func()
-    return qcm
-@repeat_decorator
-def say_hi():
-    print("hi")
+# n = int(input("Enter a number"))
+# def repeat_decorator(func):
+#     def qcm():
+#         for i in range(1,n+1):
+#             func()
+#     return qcm
+# @repeat_decorator
+# def say_hi():
+#     print("hi")
         
-say_hi()
+# say_hi()
+# ------------------------------------------------
+def decorator1(func):
+    def hello():
+        print("Hello")
+        func()
+        print("Buddy")
+    return hello
+
+def decorator2(func):
+    def bye():
+        print("Buddy...")
+        func()
+        print("Bye")
+    return bye
+@decorator2    
+@decorator1
+def greetings():
+    print("Your task is completed")
+
+greetings()
