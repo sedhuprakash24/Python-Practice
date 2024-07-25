@@ -950,3 +950,55 @@
 
 # circle1.area()
 # circle1.circumference()
+
+# -----------------------------Inheritance----------------------------
+# --------------------------Single-----------------------------
+
+# class vehicle:
+#     def __init__(self,make,model):
+#         self.make = make
+#         self.model = model
+#     def start_engine(self):
+#         print("Engine Started")    
+
+# class car(vehicle):
+#     def __init__(self,make,model,num_doors):
+#         super().__init__(make,model)
+#         self.num_doors=num_doors
+#     def display(self):
+#         print(f"This is {self.make} {self.model} and it has {self.num_doors} doors")    
+#     def honk(self):
+#         print("Honk! Honk!")        
+        
+# obj1 = car("Audi","A6","4")
+# obj1.display()
+
+# -----------------------------------Multiple------------------
+# class electric:
+#     def charge_battery(self):
+#         print("Baterry charging")
+# class self_driving:
+#     def auto_pilot(self):
+#         print("auto-pilot engaged")        
+# class electric_car(electric,self_driving):
+#     pass
+
+# obj1 = electric_car()
+# obj1.charge_battery()
+# obj1.auto_pilot()
+
+# ---------------------------------Multilevel----------------
+
+# class LivingBeing:
+#     def breath(self):
+#         print("Breathing")
+# class Human(LivingBeing):
+#     def speak(self):
+#         print("Speaking")        
+# class Student(Human):
+#     def study(self):
+#         print("Studying")   
+
+# obj1=Student()
+# obj1.breath()             
+# obj1.speak()  
