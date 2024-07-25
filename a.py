@@ -827,23 +827,126 @@
 #     print("hi")
         
 # say_hi()
-# ------------------------------------------------
-def decorator1(func):
-    def hello():
-        print("Hello")
-        func()
-        print("Buddy")
-    return hello
+# --------------------MULTIPLE DECORATORS----------------------------
+# def decorator1(func):
+#     def hello():
+#         print("Hello")
+#         func()
+#         print("Buddy")
+#     return hello
 
-def decorator2(func):
-    def bye():
-        print("Buddy...")
-        func()
-        print("Bye")
-    return bye
-@decorator2    
-@decorator1
-def greetings():
-    print("Your task is completed")
+# def decorator2(func):
+#     def bye():
+#         print("Buddy...")
+#         func()
+#         print("Bye")
+#     return bye    
+# @decorator1
+# @decorator2
+# def greetings():
+#     print("Your task is completed")
 
-greetings()
+# greetings()
+
+# def log_arguments(func):
+#     def ari(*a,**b):
+#         print("The two arguments are",a)
+#         return func(*a,**b)       
+#     return ari
+
+# @log_arguments
+# def add(a,b):
+#     print(a+b)
+# add(2,4)
+
+# -----------------------------time----------------------------------
+# import time
+# a=time.time()
+# def time_decorator(func):
+#     def execution_time():
+#         func()
+#     return execution_time
+
+# @time_decorator
+# def slow_function():
+#     time.sleep(4)
+#     b=time.time()
+#     temp = b - a
+#     print("The execution time is: ",a,"ms")
+#     print("The execution time is: ",b,"ms")
+#     print("The execution time is: ",temp,"ms")
+    
+# slow_function()
+# ------------------------------meta-characters---------------------------------------
+
+# \s - blank space 
+# "." accepts everything expect newline(\n) in between strings. eg. (c.t)- cat,cut,c\nt
+# "^" find starts with. eg. "^cat"
+# "$" find ends with.
+# "*" irukalaam or illatiyum irukalam. eg. ca*t - cat,cut,cot
+# "+" atleast one time aavuthu irukanum. eg. ca+t - cat,caat,caaat
+# "?" ca?t - cat,ct
+#"{}" fixes range. eg. ca{2}t- caat, ca{2,}-caaaat, ca{2,5}-caaaaat 
+# "[]" fixes range [a-z]
+# "|" used as or "cat|dog"
+# import re
+# pattern=r"[a-z]+"
+# text="""John Doe can be reached at john.doe@example.com or at his mobile number +1-555-123-4567 . 
+# Jane Smith's contact details are jane.smith@domain.org and her phone number is 555-234-5678. 
+# If you need to contact Bob Johnson, his email is bob_johnson123@anotherdomain.net and his mobile
+# number is (555) 345-6789. 755-434-5678 You can also reach Alice Brown at alice.brown@company.com or call 055-134-5578 her at 555.456.7890. 
+# Additionally, Dave White can be contacted at dave.white@something"""
+# a=re.findall(pattern,text)
+# print(a)
+# ---------------------------------class and objects----------------------------
+# class car:
+#     def __init__(self,make,model,year):
+#         self.make =make
+#         self.model =model
+#         self.year =year
+#     def display_info(self):
+#         print(f"this is {self.make} {self.model} from {self.year}")
+# obj1=car("audi","a6","2018")
+# obj2=car("Volswogen","Polo Gt","2020")
+
+# obj1.display_info()
+# obj2.display_info()
+
+# ---------------------------------2.-------------------------------
+
+# class car:
+#     def __init__(self,make,model,year):
+#         self.make =make
+#         self.model =model
+#         self.year =year
+#     def display_info(self):
+#         print(f"this is {self.make} {self.model} from {self.year}")
+#     def start_engine(self):
+#         print("Engine starts")
+#     def stop_engine(self):
+#         print("Engine stops")    
+# obj1=car("audi","a6","2018")
+# obj2=car("Volswogen","Polo Gt","2020")
+
+# obj1.start_engine()
+# obj1.display_info()
+# obj1.stop_engine()
+# print("")
+# obj2.start_engine()
+# obj2.display_info()
+# obj2.stop_engine()
+
+# -----------------------------------3.--------------------------------
+
+# import math
+# class circle:
+#     def __init__(self,radius):
+#         self.radius=radius
+#     def area(self):
+#         print(math.pi*self.radius**2)
+#     def circumference(self):
+#         print(2*math.pi*self.radius)   
+# circle1=circle(4)
+
+# circle1.area()
+# circle1.circumference()
